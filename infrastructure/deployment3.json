@@ -8,6 +8,11 @@
         "description": "provide a 2-13 character prefix for all resources."
       }
     },
+    "StorageAccountKey": {
+      "type": "string",
+      "metadata": {
+        "description": "Enter Storage account Key"
+      }
     "ContainerName": {
       "type": "string",
       "defaultValue": "redis",
@@ -227,7 +232,7 @@
             },
             {
               "name": "AzureWebJobsStorage",
-              "value": "[concat('DefaultEndpointsProtocol=https;AccountName=','openaiekdemo2str',';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', 'openaiekdemo2str'), '2019-06-01').keys[0].value,';EndpointSuffix=','core.windows.net')]"
+              "value": "[concat('DefaultEndpointsProtocol=https;AccountName=','openaiekdemostr',';AccountKey=',parameters('StorageAccountKey'),';EndpointSuffix=','core.windows.net')]"
             },
             {
               "name": "OPENAI_API_BASE",
@@ -243,11 +248,11 @@
             },
             {
               "name": "BLOB_ACCOUNT_NAME",
-              "value": "openaiekdemo2str"
+              "value": "openaiekdemostr"
             },
             {
               "name": "BLOB_ACCOUNT_KEY",
-              "value": "[listKeys(resourceId('Microsoft.Storage/storageAccounts', 'openaiekdemo2str'), '2019-06-01').keys[0].value]"
+              "value": "[parameters('StorageAccountKey')]"
             },
             {
               "name": "BLOB_CONTAINER_NAME",
@@ -358,8 +363,8 @@
             "name": "[variables('FileShareName')]",
             "azureFile": {
               "shareName": "[variables('FileShareName')]",
-              "storageAccountName": "openaiekdemo2str",
-              "storageAccountKey": "[listKeys(resourceId('Microsoft.Storage/storageAccounts', 'openaiekdemo2str'), '2021-08-01').keys[0].value]"
+              "storageAccountName": "openaiekdemostr",
+              "storageAccountKey": "[parameters('StorageAccountKey')]"
             }
           }
         ]
@@ -396,8 +401,8 @@
         "REDIS_PASSWORD": "[parameters('RedisPassword')]",
         "OPENAI_API_BASE": "[concat('https://', parameters('OpenAIName'),'.openai.azure.com/')]",
         "OPENAI_API_KEY": "[parameters('OpenAIKey')]",
-        "BLOB_ACCOUNT_NAME": "openaiekdemo2str",
-        "BLOB_ACCOUNT_KEY": "[listkeys(resourceId('Microsoft.Storage/storageAccounts', 'openaiekdemo2str'), '2015-05-01-preview').key1]",
+        "BLOB_ACCOUNT_NAME": "openaiekdemostr",
+        "BLOB_ACCOUNT_KEY": "[parameters('StorageAccountKey')]",
         "BLOB_CONTAINER_NAME": "[variables('BlobContainerName')]",
         "FORM_RECOGNIZER_ENDPOINT": "[parameters('FormRecognizerEndpoint')]",
         "FORM_RECOGNIZER_KEY": "[parameters('FormRecognizerKey')]",
