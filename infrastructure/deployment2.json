@@ -207,7 +207,7 @@
       "tags": {},
       "dependsOn": [
         "[concat('Microsoft.Web/serverfarms/', parameters('HostingPlanName'))]",
-        "[concat('Microsoft.Storage/storageAccounts/', 'openaiekdemostr)]",
+        "[concat('Microsoft.Storage/storageAccounts/', 'openaiekdemostr')]",
         "[concat('Microsoft.Insights/components/', parameters('ApplicationInsightsName'))]"
       ],
       "properties": {
