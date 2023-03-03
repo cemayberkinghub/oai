@@ -232,7 +232,7 @@
             },
             {
               "name": "AzureWebJobsStorage",
-              "value": "[concat('DefaultEndpointsProtocol=https;AccountName=','openaiekdemostr',';AccountKey=',parameters('StorageAccountKey'),';EndpointSuffix=','core.windows.net')]"
+              "value": "[concat('DefaultEndpointsProtocol=https;AccountName=','openaiekdemo2str',';AccountKey=',parameters('StorageAccountKey'),';EndpointSuffix=','core.windows.net')]"
             },
             {
               "name": "OPENAI_API_BASE",
@@ -248,7 +248,7 @@
             },
             {
               "name": "BLOB_ACCOUNT_NAME",
-              "value": "openaiekdemostr"
+              "value": "openaiekdemo2str"
             },
             {
               "name": "BLOB_ACCOUNT_KEY",
@@ -363,7 +363,7 @@
             "name": "[variables('FileShareName')]",
             "azureFile": {
               "shareName": "[variables('FileShareName')]",
-              "storageAccountName": "openaiekdemostr",
+              "storageAccountName": "openaiekdemo2str",
               "storageAccountKey": "[parameters('StorageAccountKey')]"
             }
           }
@@ -401,7 +401,7 @@
         "REDIS_PASSWORD": "[parameters('RedisPassword')]",
         "OPENAI_API_BASE": "[concat('https://', parameters('OpenAIName'),'.openai.azure.com/')]",
         "OPENAI_API_KEY": "[parameters('OpenAIKey')]",
-        "BLOB_ACCOUNT_NAME": "openaiekdemostr",
+        "BLOB_ACCOUNT_NAME": "openaiekdemo2str",
         "BLOB_ACCOUNT_KEY": "[parameters('StorageAccountKey')]",
         "BLOB_CONTAINER_NAME": "[variables('BlobContainerName')]",
         "FORM_RECOGNIZER_ENDPOINT": "[parameters('FormRecognizerEndpoint')]",
